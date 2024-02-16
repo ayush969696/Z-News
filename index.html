@@ -11,33 +11,30 @@
 <body>
     <nav>
         <div class="main-nav container  flex">
-            <a href="#" class="company-logo"> <img src="./assests/notice.png" alt="Z-News logo" > </a>
+            <a href="#" class="company-logo" onclick="reload()"> <img src="./assests/notice.png" alt="Z-News logo" > </a>
             <div class="nav-links">
                 <ul class="flex">
-                    <li class="hover-link nav-item">IPL</li>
-                    <li class="hover-link nav-item">Finance</li>
-                    <li class="hover-link nav-item">Politics</li>
+                    <li class="hover-link nav-item" id="ipl" onclick="onNavItemClick('ipl')">IPL</li>
+                    <li class="hover-link nav-item" id="finance" onclick="onNavItemClick('finance')">Finance</li>
+                    <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('politics')">Politics</li>
                 </ul>
             </div>
-            <div class="search-bar">
-                <input type="text" class="news-input" placeholder="e.g. Science">
-                <button class="search-button">Search</button>
+            <div class="search-bar">  
+                <input id="input-query" type="text" class="news-input" placeholder="e.g. Science" >
+                <button class="search-button" id="search-btn">Search</button>
             </div>
         </div>
     </nav>
 
     <main>
-        <div class="cards-container container flex">
-          
-            
+        <div class="cards-container container flex" id="cards-container">
         </div>
-
     </main>
 
     <template id="template-news-card">
         <div class="card">
             <div class="card-header">
-                <img src="https://via.placeholder.com/400x200" alt="news-img" class="news-img">
+                <img src="https://via.placeholder.com/400x200" alt="news-img" class="news-img" id="news-img">
             </div>
             <div class="card-content">
                 <h3 id="news-title">This is the Title</h3>
